@@ -1,4 +1,5 @@
 import React from "react";
+import { FaHome } from "react-icons/fa";
 
 const TodoForm = () => {
   return (
@@ -19,11 +20,15 @@ const TodoForm = () => {
             <textarea className="font-sans text-gray-700 text-xl  font-bold p-4 outline-none" />
           </div>
 
-          <div className="grid grid-cols-2">
-            <div className="bg-white p-3 hover:shadow-lg hover:bg-gray-900 hover:text-white cursor-pointer hover:rounded-lg">
-              Home
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-white flex items-center p-3 hover:shadow-lg hover:bg-gray-900 hover:text-white cursor-pointer hover:rounded-lg">
+              <FaHome />
+              <span className="text-lg ml-3">Home</span>
             </div>
-            <div></div>
+            <div className="bg-white flex items-center p-3 hover:shadow-lg hover:bg-gray-900 hover:text-white cursor-pointer hover:rounded-lg">
+              <FaHome />
+              <span className="text-lg ml-3">Home</span>
+            </div>
           </div>
         </div>
       </form>
