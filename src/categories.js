@@ -1,4 +1,4 @@
-import { FaBuilding, FaHome } from "react-icons/fa"
+import { FaBuilding, FaHome, FaMusic, FaRegMoneyBillAlt } from "react-icons/fa"
 
 
 
@@ -19,5 +19,7 @@ export const categories = [
 
 export const categoryIcons = {
     "Home": <FaHome />,
+    "Finance": <FaRegMoneyBillAlt />,
+    "Music": <FaMusic />,
     "Work": <FaBuilding />
 }
