@@ -20,7 +20,9 @@ const TodoForm = () => {
           </div>
 
           <div className="grid grid-cols-2">
-            <div className="bg-white p-3">Home</div>
+            <div className="bg-white p-3 hover:shadow-lg hover:bg-gray-900 hover:text-white cursor-pointer hover:rounded-lg">
+              Home
+            </div>
             <div></div>
           </div>
         </div>
