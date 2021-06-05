@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome } from "react-icons/fa";
+import CategoryItem from "./CategoryItem";
 
 const TodoForm = () => {
   return (
@@ -21,14 +21,10 @@ const TodoForm = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <div className="bg-white flex items-center p-3 hover:shadow-lg hover:bg-gray-900 hover:text-white cursor-pointer hover:rounded-lg">
-              <FaHome />
-              <span className="text-lg ml-3">Home</span>
-            </div>
-            <div className="bg-white flex items-center p-3 hover:shadow-lg hover:bg-gray-900 hover:text-white cursor-pointer hover:rounded-lg">
-              <FaHome />
-              <span className="text-lg ml-3">Home</span>
-            </div>
+            <CategoryItem text="Home" />
+            <CategoryItem text="Finance" />
+            <CategoryItem text="Work" />
+            <CategoryItem text="Music" />
           </div>
         </div>
       </form>
