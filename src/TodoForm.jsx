@@ -24,7 +24,12 @@ const TodoForm = () => {
 
           <div className="grid grid-cols-2 gap-3">
             {categories.map((cat, id) => (
-              <CategoryItem key={id} text={cat.text} />
+              <CategoryItem
+                key={id}
+                text={cat.text}
+                active={_categories.includes(cat.text)}
+                onClick={setCategories}
+              />
             ))}
             <CategoryItem text="Home" />
             <CategoryItem text="Finance" />
