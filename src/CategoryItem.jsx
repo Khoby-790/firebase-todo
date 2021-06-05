@@ -1,8 +1,7 @@
 import React from "react";
-import { FaHome } from "react-icons/fa";
 import { categoryIcons } from "./categories";
 
-const CategoryItem = ({ icon, text }) => {
+const CategoryItem = ({ text }) => {
   return (
     <div className="bg-white flex text-2xl items-center p-3 hover:shadow-lg hover:bg-gray-900 hover:text-white cursor-pointer hover:rounded-lg">
       {categoryIcons[text]}
