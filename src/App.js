@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { v4 } from "uuid";
 import LoadingPage from "./LoadingPage";
 import TodoForm from "./TodoForm";
+import TodoListing from "./TodoListing";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
   return (
     <div className="bg-fta-primary lg:flex-row md:flex-col h-screen w-screen flex-1 flex p-6">
       <TodoForm />
-      <div className="w-auto bg-gray-800"></div>
+      <TodoListing />
     </div>
   );
 }
