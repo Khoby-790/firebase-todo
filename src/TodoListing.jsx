@@ -27,7 +27,7 @@ const TodoListing = () => {
         {todos.map((todo, todoId) => (
           <div
             key={todoId}
-            className="bg-gradient-to-b from-bg-2 cursor-pointer p-2"
+            className="bg-gradient-to-b from-bg-2 via-gray-300 shadow-xl to-bg-fta-primary cursor-pointer p-2"
           >
             <div className="text-xl flex py-2 flex-row">
               {todo.categories.map((cat, catId) => (
