@@ -27,9 +27,9 @@ const TodoListing = () => {
         {todos.map((todo, todoId) => (
           <div key={todoId} className="bg-gray-500 p-2">
             <div className="text-xl flex flex-row">
-              <span className="mx-2">
-                {todo.categories.map((cat, catId) => categoryIcons[cat])}
-              </span>
+              {todo.categories.map((cat, catId) => (
+                <span className="mx-2">categoryIcons[cat]</span>
+              ))}
             </div>
             {todo.title}
           </div>
