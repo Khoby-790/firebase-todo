@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { categories, categoryIcons } from "./categories";
+import { categoryIcons } from "./categories";
 import fire from "./fire";
-
 const TodoListing = () => {
   const [todos, setTodos] = useState([]);
+
   useEffect(() => {
     const auth = localStorage.getItem("fta-auth");
     let messageRef = fire
