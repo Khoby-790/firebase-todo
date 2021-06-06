@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         "fta-primary": "#1b1a28",
-        "bg-2": "#847ea1"
+        "bg-2": "#847ea1",
+        "dark": "#5e6690"
       }
     },
   },

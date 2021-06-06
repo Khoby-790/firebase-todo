@@ -19,9 +19,9 @@ const CategoryItem = ({ text, onClick, active }) => {
     <div
       onClick={handleClick}
       className={`${
-        active ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+        active ? "bg-dark text-white" : "bg-white text-dark"
       } flex text-2xl items-center p-3 hover:shadow-lg  ${
-        active ? " hover:text-white " : "hover:text-white hover:bg-gray-900"
+        active ? " hover:text-white " : "hover:text-white hover:bg-dark"
       } cursor-pointer hover:rounded-lg`}
     >
       {categoryIcons[text]}
