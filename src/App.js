@@ -16,6 +16,7 @@ function App() {
     } else {
       const uid = v4();
       localStorage.setItem("fta-auth", uid);
+      setLoading(false)
     }
   }, [])
 
