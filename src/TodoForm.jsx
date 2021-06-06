@@ -1,21 +1,44 @@
 import React, { useState } from "react";
 import { categories } from "./categories";
 import CategoryItem from "./CategoryItem";
+import fire from "./fire";
+import { useToasts } from "react-toast-notifications";
 
 const TodoForm = () => {
+  const { addToast } = useToasts();
   const [_categories, setCategories] = useState([]);
   const [todo, setTodo] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  const addTodo = () => {
+  const addTodo = (e) => {
+    e.preventDefault();
     const auth = localStorage.getItem("fta-auth");
+    const db = fire.database().ref(`fta-todos-${auth}`);
+
+    db.push({
+      title,
+      description,
+      categories: _categories,
+    })
+      .then((res) => {
+        addToast("Todo added successfully", {
+          appearance: "success",
+          autoDismiss: true,
+        });
+      })
+      .catch((err) => {
+        addToast("Todo not added successfully", {
+          appearance: "error",
+          autoDismiss: true,
+        });
+      });
   };
 
   return (
     <div className="lg:w-1/3 md:w-full sm:w-full bg-gradient-to-b from-bg-2 shadow-lg  to-bg-fta-primary rounded-xl py-5 px-3">
       <form
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={addTodo}
         className="flex flex-col justify-center mx-4 flex-1 h-full"
       >
         <div className="grid grid-cols-1 gap-4">
