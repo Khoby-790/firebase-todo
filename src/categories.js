@@ -18,8 +18,8 @@ export const categories = [
 ]
 
 export const categoryIcons = {
-    "Home": <FaHome color="red" />,
-    "Finance": <FaRegMoneyBillAlt color="blue" />,
-    "Music": <FaMusic />,
-    "Work": <FaBuilding />
+    "Home": <FaHome color="#1d7874" />,
+    "Finance": <FaRegMoneyBillAlt color="#1D7874" />,
+    "Music": <FaMusic color="#ee2e31" />,
+    "Work": <FaBuilding color="#071E22" />
 }
