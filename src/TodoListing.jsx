@@ -26,13 +26,7 @@ const TodoListing = () => {
       <div className="grid mt-4 grid-cols-3 gap-3">
         {todos.map((todo, todoId) => (
           <div key={todoId} className="bg-gray-500 p-2">
-            <div>
-              {todo.categories.map((cat, catId) => (
-                <>
-                  {categories[cat]} {cat}
-                </>
-              ))}
-            </div>
+            <div>{todo.categories.map((cat, catId) => categories[cat])}</div>
             {todo.title}
           </div>
         ))}
