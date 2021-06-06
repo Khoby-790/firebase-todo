@@ -7,13 +7,11 @@ const CategoryItem = ({ text, onClick, active }) => {
       onClick((prevs) => {
         if (prevs.includes(text)) {
           //filter
-          alert("In it");
+          return prevs.filter((e) => e !== text);
         } else {
           //add
-          alert("Not in it");
+          return [...prevs, text];
         }
-
-        return [];
       });
   };
 
@@ -23,7 +21,7 @@ const CategoryItem = ({ text, onClick, active }) => {
       className={`${
         active ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       } flex text-2xl items-center p-3 hover:shadow-lg  ${
-        active ? "hover:text-gray-900 " : "hover:text-white hover:bg-gray-900"
+        active ? " hover:text-white " : "hover:text-white hover:bg-gray-900"
       } cursor-pointer hover:rounded-lg`}
     >
       {categoryIcons[text]}
