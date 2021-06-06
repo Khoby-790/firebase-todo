@@ -26,12 +26,13 @@ const TodoListing = () => {
       <div className="grid mt-4 grid-cols-3 gap-3">
         {todos.map((todo, todoId) => (
           <div key={todoId} className="bg-gray-500 p-2">
-            <div className="text-xl flex flex-row">
+            <div className="text-xl flex py-2 flex-row">
               {todo.categories.map((cat, catId) => (
-                <span className="mx-2">categoryIcons[cat]</span>
+                <span className="mx-2">{categoryIcons[cat]}</span>
               ))}
             </div>
-            {todo.title}
+            <span>{todo.title}</span>
+            <p>{todo.description}</p>
           </div>
         ))}
       </div>
