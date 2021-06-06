@@ -18,9 +18,12 @@ const TodoListing = () => {
   }, []);
 
   return (
-    <div className="w-auto flex-1 flex flex-col text-white bg-fta-primary">
-      <div>
-        <span className="text-3xl font-thin"></span>
+    <div className="w-auto flex-1 flex flex-col text-white px-5 py-3 bg-fta-primary">
+      <div className="">
+        <span className="text-3xl font-thin">Todos</span>
+      </div>
+      <div className="grid grid-cols-3 gap-3">
+        <div className="bg-gray-500"></div>
       </div>
     </div>
   );
