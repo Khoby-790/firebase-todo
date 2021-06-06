@@ -18,7 +18,11 @@ const TodoListing = () => {
   }, []);
 
   return (
-    <div className="w-auto flex-1 bg-fta-primary">{JSON.stringify(todos)}</div>
+    <div className="w-auto flex-1 flex flex-col text-white bg-fta-primary">
+      <div>
+        <span className="text-3xl font-thin"></span>
+      </div>
+    </div>
   );
 };
 
