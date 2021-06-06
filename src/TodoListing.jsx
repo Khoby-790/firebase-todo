@@ -4,9 +4,10 @@ import fire from "./fire";
 const TodoListing = () => {
   const [todos, setTodos] = useState([]);
   useEffect(() => {
+    const auth = localStorage.getItem("fta-auth");
     let messageRef = fire
       .database()
-      .ref("fta-todos")
+      .ref(`fta-todos-${auth}`)
       .orderByKey()
       .limitToLast(100);
 
