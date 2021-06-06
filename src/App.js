@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { v4 } from "uuid";
 import LoadingPage from "./LoadingPage";
 import TodoForm from "./TodoForm";
 
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const auth = localStorage.getItem("fta-auth");
+    console.log(auth)
+    if (auth) {
+      setLoading(false)
+    } else {
+      const uid = v4();
+      localStorage.setItem("fta-auth", uid);
+    }
+  }, [])
+
 
   if (loading) return <LoadingPage />
 
