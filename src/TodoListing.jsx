@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { categories } from "./categories";
 import fire from "./fire";
 
 const TodoListing = () => {
@@ -25,6 +26,13 @@ const TodoListing = () => {
       <div className="grid mt-4 grid-cols-3 gap-3">
         {todos.map((todo, todoId) => (
           <div key={todoId} className="bg-gray-500 p-2">
+            <div>
+              {todo.categories.map((cat, catId) => (
+                <>
+                  {categories[cat]} {cat}
+                </>
+              ))}
+            </div>
             {todo.title}
           </div>
         ))}
