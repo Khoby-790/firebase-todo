@@ -23,7 +23,7 @@ const TodoListing = () => {
       <div className="">
         <span className="text-3xl font-thin">Todos</span>
       </div>
-      <div className="grid mt-4 grid-cols-3 gap-3">
+      <div className="grid mt-4 grid-cols-3 sm:grid-cols-1 gap-3">
         {todos.map((todo, todoId) => (
           <div
             key={todoId}
