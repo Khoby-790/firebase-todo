@@ -15,7 +15,7 @@ const TodoForm = () => {
   return (
     <div className="lg:w-1/3 md:w-full sm:w-full bg-gradient-to-b from-bg-2 shadow-lg  to-bg-fta-primary rounded-xl py-5 px-3">
       <form
-        onSubmit={(e) => {}}
+        onSubmit={(e) => e.preventDefault()}
         className="flex flex-col justify-center mx-4 flex-1 h-full"
       >
         <div className="grid grid-cols-1 gap-4">
