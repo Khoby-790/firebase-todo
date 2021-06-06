@@ -24,7 +24,7 @@ function App() {
   if (loading) return <LoadingPage />
 
   return (
-    <div className="bg-fta-primary lg:flex-row md:flex-col sm:flex-col flex-col h-screen w-screen flex-1 flex p-6">
+    <div className="bg-fta-primary overflow-y-scroll lg:flex-row md:flex-col sm:flex-col flex-col h-screen w-screen flex-1 flex p-6">
       <TodoForm />
       <TodoListing />
     </div>
