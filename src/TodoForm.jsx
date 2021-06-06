@@ -32,6 +32,11 @@ const TodoForm = () => {
               />
             ))}
           </div>
+          <div className="w-full my-4">
+            <button className="bg-btn text-white rounded-3xl p-3 w-full hover:scale-50">
+              Add todo
+            </button>
+          </div>
         </div>
       </form>
     </div>
