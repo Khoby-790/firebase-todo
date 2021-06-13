@@ -12,17 +12,15 @@ const TodoItem = ({ todo = {} }) => {
     to: { opacity: 1, marginTop: 0 },
   }));
 
-  useEffect(() => {
-    if (todo) {
-      const auth = localStorage.getItem("fta-auth");
-      const db = fire.database().ref(`fta-todos-${auth}/${todo.id}`);
-
-      db.remove();
-    }
-  }, [todo]);
+  const remove = () => {
+    const auth = localStorage.getItem("fta-auth");
+    const db = fire.database().ref(`fta-todos-${auth}/${todo.id}`);
+    db.remove();
+  };
 
   return (
     <animated.div
+      onDoubleClick={remove}
       style={props}
       className=" bg-gray-500 shadow-xl group flex flex-col hover:bg-gray-700 duration-300 transform transition-all rounded-none cursor-pointer p-2"
     >
