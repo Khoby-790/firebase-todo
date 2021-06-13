@@ -9,13 +9,13 @@ const to = (i) => ({
   y: 0,
   scale: 1,
   rot: -10 + Math.random() * 20,
-  delay: i * 100,
+  delay: i * 200,
 });
 const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 
 const TodoListing = () => {
   const [todos, setTodos] = useState([]);
-  const [props, set] = useSprings(todos.length, (i) => ({
+  const [props] = useSprings(todos.length, (i) => ({
     ...to(i),
     from: from(i),
   })); // Create a bunch of springs using the helpers above
