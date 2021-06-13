@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { categoryIcons } from "./categories";
 import fire from "./fire";
+import TodoItem from "./TodoItem";
 const TodoListing = () => {
   const [todos, setTodos] = useState([]);
 
@@ -23,20 +24,10 @@ const TodoListing = () => {
       <div className="">
         <span className="text-3xl font-thin">Todos</span>
       </div>
+      {todos.length < 1 && <div>Loading...</div>}
       <div className="grid mt-4 lg:grid-cols-3 grid-cols-1 sm:grid-cols-1 gap-3">
         {todos.map((todo, todoId) => (
-          <div
-            key={todoId}
-            className="bg-gradient-to-b from-bg-2 via-gray-300 shadow-xl to-bg-fta-primary cursor-pointer p-2"
-          >
-            <div className="text-xl flex py-2 flex-row">
-              {todo.categories.map((cat, catId) => (
-                <span className="mx-2">{categoryIcons[cat]}</span>
-              ))}
-            </div>
-            <span className="font-semibold text-2xl">{todo.title}</span>
-            <p className="font-light truncate">{todo.description}</p>
-          </div>
+          <TodoItem key={todoId} todo={todo} />
         ))}
       </div>
     </div>
