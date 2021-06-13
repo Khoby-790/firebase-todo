@@ -14,7 +14,7 @@ const TodoItem = ({ todo = {} }) => {
   return (
     <animated.div
       style={props}
-      className=" bg-gray-500 shadow-xl hover:rounded transform transition-all rounded-none cursor-pointer p-2"
+      className=" bg-gray-500 shadow-xl hover:bg-gray-700 duration-300 transform transition-all rounded-none cursor-pointer p-2"
     >
       <div className="text-xl flex py-2 flex-row">
         {todo.categories.map((cat, catId) => (
