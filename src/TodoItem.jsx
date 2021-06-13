@@ -6,15 +6,15 @@ const TodoItem = ({ todo = {} }) => {
   const [props] = useSpring(() => ({
     from: {
       opacity: 0,
-      marginLeft: -1000,
+      marginTop: -1000,
     },
-    to: { opacity: 1, marginLeft: 0 },
+    to: { opacity: 1, marginTop: 0 },
   }));
 
   return (
     <>
       <animated.div
-        style={{ ...props }}
+        style={props}
         className=" bg-gray-500 shadow-xl hover:rounded-md cursor-pointer p-2"
       >
         <div className="text-xl flex py-2 flex-row">
