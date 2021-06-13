@@ -3,13 +3,13 @@ import { categoryIcons } from "./categories";
 import { useSpring } from "react-spring";
 
 const TodoItem = ({ todo = {} }) => {
-  const props = useSpring({
+  const [props] = useSpring(() => ({
     from: {
       opacity: 0,
       marginTop: -1000,
     },
     to: { opacity: 1, marginBottom: 0 },
-  });
+  }));
 
   return (
     <>
