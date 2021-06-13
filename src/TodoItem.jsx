@@ -14,9 +14,9 @@ const TodoItem = ({ todo = {} }) => {
   return (
     <animated.div
       style={props}
-      className=" bg-gray-500 shadow-xl flex-1 flex group hover:bg-gray-700 duration-300 transform transition-all rounded-none cursor-pointer p-2"
+      className=" bg-gray-500 shadow-xl group hover:bg-gray-700 duration-300 transform transition-all rounded-none cursor-pointer p-2"
     >
-      <div className="w-auto flex-1">
+      <div className="w-auto">
         <div className="text-xl flex  py-2 flex-row">
           {todo.categories.map((cat, catId) => (
             <span key={catId} className="mx-2">
@@ -27,7 +27,7 @@ const TodoItem = ({ todo = {} }) => {
         <span className="font-semibold text-2xl">{todo.title}</span>
         <p className="font-light truncate">{todo.description}</p>
       </div>
-      <div className="w-0 group-hover:w-11 transition-all duration-100 bg-red-600"></div>
+      <div className="h-0 group-hover:h-11 transition-all duration-100 bg-red-600"></div>
     </animated.div>
   );
 };
