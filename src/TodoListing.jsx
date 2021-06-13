@@ -26,18 +26,13 @@ const TodoListing = () => {
       .database()
       .ref(`fta-todos-${auth}`)
       .orderByKey()
-      .limitToLast(12);
+      .limitToLast(1000);
 
     messageRef.on("child_added", (snapshot) => {
       let todo = { ...snapshot.val(), id: snapshot.key };
       setTodos((prev) => [...prev, todo]);
     });
   }, []);
-
-  const trans = (r, s) =>
-    `perspective(1500px) rotateX(30deg) rotateY(${
-      r / 10
-    }deg) rotateZ(${r}deg) scale(${s})`;
 
   return (
     <div className="w-auto flex-1 flex flex-col overflow-y-scroll text-white px-5 py-3 bg-fta-primary">
