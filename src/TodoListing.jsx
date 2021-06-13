@@ -37,6 +37,10 @@ const TodoListing = () => {
     // messageRef.on("child_removed", handler);
   }, []);
 
+  const removeTodo = ({ id }) => {
+    setTodos((prev) => [...prev.filter((el) => el.id !== id)]);
+  };
+
   return (
     <div className="w-auto flex-1 flex flex-col overflow-y-scroll text-white px-5 py-3 bg-fta-primary">
       <div className="">
@@ -60,7 +64,7 @@ const TodoListing = () => {
             }}
           >
             {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-            <TodoItem todo={todos[i]} />
+            <TodoItem todo={todos[i]} removeTodo={removeTodo} />
           </animated.div>
         ))}
       </div>
