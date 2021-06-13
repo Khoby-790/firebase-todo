@@ -27,7 +27,7 @@ const TodoItem = ({ todo = {} }) => {
         <span className="font-semibold text-2xl">{todo.title}</span>
         <p className="font-light truncate">{todo.description}</p>
       </div>
-      <div className="h-11 absolute group-hover:h-11 transition-all duration-100 bg-red-600"></div>
+      <div className="absolute top-0 bottom-0 left-0 right-0 group-hover:h-11 transition-all duration-100 bg-red-600"></div>
     </animated.div>
   );
 };
