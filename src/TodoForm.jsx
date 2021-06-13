@@ -7,7 +7,7 @@ import { useToasts } from "react-toast-notifications";
 const TodoForm = () => {
   const { addToast } = useToasts();
   const [_categories, setCategories] = useState([]);
-  const [todo, setTodo] = useState({});
+  // const [todo, setTodo] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
