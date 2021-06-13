@@ -3,7 +3,7 @@ import { categoryIcons } from "./categories";
 import { useSpring, animated } from "react-spring";
 import fire from "./fire";
 
-const TodoItem = ({ todo = {} }) => {
+const TodoItem = ({ todo = {}, removeTodo }) => {
   const [props] = useSpring(() => ({
     from: {
       opacity: 0,
@@ -16,6 +16,7 @@ const TodoItem = ({ todo = {} }) => {
     const auth = localStorage.getItem("fta-auth");
     const db = fire.database().ref(`fta-todos-${auth}/${todo.id}`);
     db.remove();
+    removeTodo && removeTodo(todo.id);
   };
 
   return (
