@@ -44,28 +44,26 @@ const TodoListing = () => {
       <div className="">
         <span className="text-3xl font-thin">Todos</span>
       </div>
-      {props.map(({ x, y, rot, scale }, i) => (
-        <animated.div
-          key={i}
-          style={{
-            transform: interpolate(
-              [x, y],
-              (x, y) => `translate3d(${x}px,${y}px,0)`
-            ),
-          }}
-        >
-          {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-          <TodoItem todo={todos[i]} />
-        </animated.div>
-      ))}
+
       {todos.length < 1 && (
         <div className="text-white w-full h-full flex justify-center items-center">
           <AtomSpinner color="red" />
         </div>
       )}
       <div className="grid mt-4 lg:grid-cols-3 grid-cols-1 sm:grid-cols-1 gap-3">
-        {todos.map((todo, todoId) => (
-          <TodoItem key={todoId} todo={todo} />
+        {props.map(({ x, y, rot, scale }, i) => (
+          <animated.div
+            key={i}
+            style={{
+              transform: interpolate(
+                [x, y],
+                (x, y) => `translate3d(${x}px,${y}px,0)`
+              ),
+            }}
+          >
+            {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+            <TodoItem todo={todos[i]} />
+          </animated.div>
         ))}
       </div>
     </div>
