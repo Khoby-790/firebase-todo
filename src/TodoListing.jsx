@@ -33,7 +33,7 @@ const TodoListing = () => {
       .orderByKey()
       .limitToLast(15);
 
-    messageRef.on("child_added", handler);
+    // messageRef.on("child_added", handler);
     messageRef.on("child_removed", handler);
   }, []);
 
