@@ -1,5 +1,6 @@
 import React from "react";
 import { categoryIcons } from "./categories";
+import { useSpring, animated } from "react-spring";
 
 const TodoItem = ({ todo = {} }) => {
   return (
