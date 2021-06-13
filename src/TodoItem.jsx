@@ -26,7 +26,7 @@ const TodoItem = ({ todo = {} }) => {
     >
       <div className="w-auto">
         <div className="text-xl flex  py-2 flex-row">
-          {JSON.stringify(todo)}
+          {/* {JSON.stringify(todo)} */}
           {todo.categories.map((cat, catId) => (
             <span key={catId} className="mx-2">
               {categoryIcons[cat]}
