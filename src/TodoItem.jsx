@@ -3,6 +3,8 @@ import { categoryIcons } from "./categories";
 import { useSpring, animated } from "react-spring";
 
 const TodoItem = ({ todo = {} }) => {
+  const props = useSpring({ opacity: todo ? 1 : 0 });
+
   return (
     <>
       <div className=" bg-gray-500 shadow-xl  cursor-pointer p-2">
