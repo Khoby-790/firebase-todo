@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { categoryIcons } from "./categories";
 import { useSpring, animated } from "react-spring";
 import fire from "./fire";
