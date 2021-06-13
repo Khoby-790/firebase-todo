@@ -7,7 +7,7 @@ const TodoItem = ({ todo = {} }) => {
     <Spring
       from={{
         opacity: 0,
-        marginTop: -200,
+        marginTop: -1000,
       }}
       to={{ opacity: 1, marginBottom: 0 }}
     >
