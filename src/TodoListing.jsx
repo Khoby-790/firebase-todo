@@ -11,7 +11,7 @@ const to = (i) => ({
   rot: -10 + Math.random() * 20,
   delay: i * 200,
 });
-const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
+const from = (i) => ({ x: 1000, rot: 0, scale: 1.5, y: -1000 });
 
 const TodoListing = () => {
   const [todos, setTodos] = useState([]);
