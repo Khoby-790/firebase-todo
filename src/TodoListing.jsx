@@ -6,7 +6,7 @@ import { useSprings, animated, interpolate } from "react-spring";
 
 const to = (i) => ({
   x: 0,
-  y: i * -4,
+  y: 0,
   scale: 1,
   rot: -10 + Math.random() * 20,
   delay: i * 100,
