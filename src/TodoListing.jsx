@@ -20,6 +20,12 @@ const TodoListing = () => {
     from: from(i),
   })); // Create a bunch of springs using the helpers above
 
+
+  const handler = (snapshot) => {
+    let todo = { ...snapshot.val(), id: snapshot.key };
+    setTodos((prev) => [...prev, todo]);
+}
+
   useEffect(() => {
     const auth = localStorage.getItem("fta-auth");
     let messageRef = fire
@@ -28,11 +34,7 @@ const TodoListing = () => {
       .orderByKey()
       .limitToLast(15);
 
-    messageRef.on("child_added", (snapshot) => {
-      let todo = { ...snapshot.val(), id: snapshot.key };
-      setTodos((prev) => [...prev, todo]);
-    });
-  }, []);
+    messageRef.on("child_added", handler, []);
 
   return (
     <div className="w-auto flex-1 flex flex-col overflow-y-scroll text-white px-5 py-3 bg-fta-primary">
