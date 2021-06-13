@@ -1,6 +1,6 @@
 import React from "react";
 import { categoryIcons } from "./categories";
-import { useSpring } from "react-spring";
+import { useSpring, animated } from "react-spring";
 
 const TodoItem = ({ todo = {} }) => {
   const [props] = useSpring(() => ({
@@ -8,12 +8,12 @@ const TodoItem = ({ todo = {} }) => {
       opacity: 0,
       marginTop: -1000,
     },
-    to: { opacity: 1, marginBottom: 0 },
+    to: { opacity: 1, marginTop: 0 },
   }));
 
   return (
     <>
-      <div
+      <animated.div
         style={props}
         className=" bg-gray-500 shadow-xl hover:rounded-md cursor-pointer p-2"
       >
@@ -26,7 +26,7 @@ const TodoItem = ({ todo = {} }) => {
         </div>
         <span className="font-semibold text-2xl">{todo.title}</span>
         <p className="font-light truncate">{todo.description}</p>
-      </div>
+      </animated.div>
     </>
   );
 };
