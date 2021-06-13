@@ -6,9 +6,9 @@ const TodoItem = ({ todo = {} }) => {
   const [props] = useSpring(() => ({
     from: {
       opacity: 0,
-      marginTop: -1000,
+      marginBottom: 1000,
     },
-    to: { opacity: 1, marginTop: 0 },
+    to: { opacity: 1, marginBottom: 0 },
   }));
 
   return (
