@@ -16,7 +16,7 @@ const TodoItem = ({ todo = {}, removeTodo }) => {
     const auth = localStorage.getItem("fta-auth");
     const db = fire.database().ref(`fta-todos-${auth}/${todo.id}`);
     db.remove();
-    removeTodo && removeTodo(todo.id);
+    removeTodo && removeTodo(todo);
   };
 
   return (
