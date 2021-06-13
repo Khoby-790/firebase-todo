@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { categoryIcons } from "./categories";
+import { AtomSpinner } from "react-epic-spinners";
 import fire from "./fire";
 import TodoItem from "./TodoItem";
 const TodoListing = () => {
@@ -26,7 +26,7 @@ const TodoListing = () => {
       </div>
       {todos.length < 1 && (
         <div className="text-white w-full h-full flex justify-center items-center">
-          Loading...
+          <AtomSpinner color="red" />
         </div>
       )}
       <div className="grid mt-4 lg:grid-cols-3 grid-cols-1 sm:grid-cols-1 gap-3">
