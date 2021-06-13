@@ -1,12 +1,16 @@
 import React from "react";
 import { categoryIcons } from "./categories";
-import { useSpring, animated } from "react-spring";
+import { Spring } from "react-spring";
 
 const TodoItem = ({ todo = {} }) => {
-  const props = useSpring({ opacity: todo ? 1 : 0 });
-
   return (
-    <>
+    <Spring
+      from={{
+        opacity: 0,
+        marginBottom: 200,
+      }}
+      to={{ opacity: 1, marginBottom: 0 }}
+    >
       <div className=" bg-gray-500 shadow-xl  cursor-pointer p-2">
         <div className="text-xl flex py-2 flex-row">
           {todo.categories.map((cat, catId) => (
@@ -18,7 +22,7 @@ const TodoItem = ({ todo = {} }) => {
         <span className="font-semibold text-2xl">{todo.title}</span>
         <p className="font-light truncate">{todo.description}</p>
       </div>
-    </>
+    </Spring>
   );
 };
 
