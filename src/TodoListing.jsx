@@ -40,7 +40,7 @@ const TodoListing = () => {
     }deg) rotateZ(${r}deg) scale(${s})`;
 
   return (
-    <div className="w-auto flex-1 flex flex-col text-white px-5 py-3 bg-fta-primary">
+    <div className="w-auto flex-1 flex flex-col overflow-y-scroll text-white px-5 py-3 bg-fta-primary">
       <div className="">
         <span className="text-3xl font-thin">Todos</span>
       </div>
