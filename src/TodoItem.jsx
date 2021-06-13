@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { categoryIcons } from "./categories";
 import { useSpring, animated } from "react-spring";
+import fire from "./fire";
 
 const TodoItem = ({ todo = {} }) => {
   const [props] = useSpring(() => ({
@@ -11,6 +12,15 @@ const TodoItem = ({ todo = {} }) => {
     to: { opacity: 1, marginTop: 0 },
   }));
 
+  useEffect(() => {
+    if (todo) {
+      const auth = localStorage.getItem("fta-auth");
+      const db = fire.database().ref(`fta-todos-${auth}/${todo.id}`);
+
+      db.remove();
+    }
+  }, [todo]);
+
   return (
     <animated.div
       style={props}
@@ -18,7 +28,7 @@ const TodoItem = ({ todo = {} }) => {
     >
       <div className="w-auto">
         <div className="text-xl flex  py-2 flex-row">
-            {JSON.stringify(todo)}
+          {JSON.stringify(todo)}
           {todo.categories.map((cat, catId) => (
             <span key={catId} className="mx-2">
               {categoryIcons[cat]}
