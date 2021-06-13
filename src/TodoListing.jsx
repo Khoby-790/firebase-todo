@@ -11,7 +11,7 @@ const TodoListing = () => {
       .database()
       .ref(`fta-todos-${auth}`)
       .orderByKey()
-      .limitToLast(100);
+      .limitToLast(12);
 
     messageRef.on("child_added", (snapshot) => {
       let todo = { ...snapshot.val(), id: snapshot.key };
