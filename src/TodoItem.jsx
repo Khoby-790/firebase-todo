@@ -12,7 +12,10 @@ const TodoItem = ({ todo = {} }) => {
       to={{ opacity: 1, marginBottom: 0 }}
     >
       {(props) => (
-        <div className=" bg-gray-500 shadow-xl  cursor-pointer p-2">
+        <div
+          style={props}
+          className=" bg-gray-500 shadow-xl  cursor-pointer p-2"
+        >
           <div className="text-xl flex py-2 flex-row">
             {todo.categories.map((cat, catId) => (
               <span key={catId} className="mx-2">
